@@ -18,7 +18,8 @@ h1 {
 .section {
   border: 1px solid black;
   margin: 10px;
-  position: relative; /* Add this line */
+  position: relative;
+  overflow: hidden; /* Add this line */
 }
 
 .section-title {
