@@ -1,64 +1,92 @@
-/* Reset default margin and padding */
-body, h1, p {
+/* Reset default margins and paddings */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Global styles */
+/* Apply font-family, font-size, and color */
 body {
   font-family: Arial, sans-serif;
 }
 
 h1 {
   font-size: 24px;
-  margin: 20px;
-}
-
-/* Section styles */
-.section {
-  border: 1px solid black;
-  margin: 10px;
-  position: relative;
-  overflow: hidden; /* Add this line */
+  color: #333;
 }
 
 .section-title {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Layout styles */
+header {
+  text-align: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  padding: 0 5px; 
+}
+
+.section {
+  flex: 1 1 calc(33.3333% - 10px);
+  padding: 20px;
+  border: 1px solid #000;
+  background-color: #f9f9f9;
+  margin: 5px;
+  position: relative;
+}
+
+.section h2 {
   position: absolute;
+  border: 1px solid #000;
   top: 10px;
   right: 10px;
-  background-color: #F44336;
-  color: white;
-  padding: 5px;
+  padding: 5px 10px;
+  z-index: 1;
 }
 
-.section-content {
-  padding: 20px;
+.section-title-1 {
+  background-color: #e86d6d;
 }
 
-/* Media Queries */
-/* Desktop */
-@media screen and (min-width: 992px) {
+.section-title-2 {
+  background-color: #d81818;
+}
+
+.section-title-3 {
+  background-color: #e8cb6d;
+}
+
+.section p {
+  padding-top: 30px; 
+}
+
+/* Media queries */
+@media (max-width: 991px) {
   .section {
-    width: 33.33%;
-    float: left;
+    flex-basis: calc(50% - 10px);
   }
-}
 
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .section {
-    width: 50%;
-    float: left;
-  }
   .section:nth-child(3) {
     clear: both;
+    flex-basis: 100%;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
   .section {
-    width: 100%;
-    float: none;
+    flex-basis: 100%;
   }
 }
